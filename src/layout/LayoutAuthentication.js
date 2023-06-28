@@ -4,13 +4,8 @@ import PropTypes from "prop-types";
 import { withErrorBoundary } from "react-error-boundary";
 import ErrorComponents from "../components/Common/ErrorComponents";
 
-function LayoutAuthentication({
-  children,
-  heading,
-  title,
-  changeLink,
-  titleSign,
-}) {
+function LayoutAuthentication(props) {
+  const { children, heading = "", title, changeLink } = props;
   return (
     <div className="relative w-full min-h-screen bg-lightBg p-10 isolate">
       <img
@@ -26,15 +21,16 @@ function LayoutAuthentication({
         />
       </Link>
       <div className="w-full max-w-[556px] shadow-md bg-white rounded-xl px-5 py-8 lg:px-16 lg:py-12 mx-auto text-center">
-        <h1 className="font-semibold text-lg lg:text-xl lg:mb-3 text-text1">
+        <h1 className="font-semibold text-lg lg:text-xl lg:mb-3 text-text1 mb-8">
           {heading}
         </h1>
-        <span className="text-sm text-text3">
-          {title} <Link className="text-primary">{changeLink}</Link>
-        </span>
-        <Link className="" to={""}>
-          {titleSign}
-        </Link>
+        <p className=" text-text3 lg:text-sm text-xs font-medium lg:mb-8 mb-6">
+          {title}{" "}
+          <Link className="text-primary font-medium text-decoration-underline ">
+            {changeLink}
+          </Link>
+        </p>
+
         {children}
       </div>
     </div>
@@ -49,6 +45,8 @@ LayoutAuthentication.propTypes = {
   //   titleSign: PropTypes.string,
 };
 
-export default withErrorBoundary(LayoutAuthentication, {
+const ComponentWithErrorBoundary = withErrorBoundary(LayoutAuthentication, {
   fallback: ErrorComponents,
 });
+
+export default ComponentWithErrorBoundary;
