@@ -1,13 +1,22 @@
 import React from "react";
-
-function ButtonSign({ title, icon, classnames }) {
+import PropTypes from "prop-types";
+function ButtonSign({ title, type, icon, classnames, onClick }) {
   return (
     <button
-      className={`flex items-center justify-center gap-x-2 w-full p-3 mb-5 border rounded-lg ${classnames}`}>
-      {icon ? <img src={icon} className={`${classnames}`} alt="google" /> : ""}
+      type={type}
+      onClick={onClick}
+      className={`flex items-center justify-center gap-x-2 font-semibold w-full p-3 mb-5 border rounded-lg ${classnames}`}>
+      {icon
+        ? icon || <img src={icon} className={classnames} alt="google" />
+        : ""}
       <span>{title}</span>
     </button>
   );
 }
+
+ButtonSign.propTypes = {
+  type: PropTypes.string.isRequired,
+  title: PropTypes.node,
+};
 
 export default ButtonSign;

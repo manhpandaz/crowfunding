@@ -1,7 +1,7 @@
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-const SignUpPage = lazy(() => import("./modules/auth/page/SignUpPage"));
+const SignUpPage = lazy(() => import("../src/modules/auth/page/SignUpPage.js"));
 
 function App() {
   return (
