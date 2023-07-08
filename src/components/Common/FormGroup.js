@@ -43,8 +43,8 @@ const schema = yup
   })
   .required();
 
-function FormGroup({ children }) {
-  const [isSignUp, setIsSignUp] = useState(true);
+function FormGroup({ isSignUp, onClick = () => {} }) {
+  // const [isSignUp, setIsSignUp] = useState(true);
   const [acceptTemps, setAcceptTemps] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const open = showPassword;
@@ -194,23 +194,46 @@ function FormGroup({ children }) {
             <input
               id="email"
               name="email"
-              type="email"
-              className="border w-full px-6 py-4"
+              type="Email"
               placeholder="example@example.com"
+              className={`relative border rounded-lg  w-full mb-2 px-6 py-4 ${
+                Object.keys(errors).length > 0
+                  ? "border-error"
+                  : "border-strock"
+              }`}
             />
+            {errors.email ? (
+              <span className="absolute text-error flex items-start">
+                {errors.email?.message}
+              </span>
+            ) : (
+              ""
+            )}
           </div>
 
-          <div>
+          <div className="relative">
             <label htmlFor="password" className="flex items-start mt-5 py-2">
               Password *
             </label>
             <input
+              control={control}
               id="password"
               name="password"
-              type="text"
-              className="border w-full px-6 py-4"
-              placeholder="create a password"
-            />
+              type={`${showPassword ? "text" : "password"}`}
+              className="w-full px-6 py-4 border border-strock rounded-lg outline-none"
+              placeholder="create a password"></input>
+            {open ? (
+              <FontAwesomeIcon
+                onClick={handleTogglePassword}
+                icon={faEye}
+                className="absolute right-3 top-2/4 translate-y-2/4 cursor-pointer mr-4 mt-[5px] select-none"
+              />
+            ) : (
+              <FontAwesomeIcon
+                onClick={handleTogglePassword}
+                icon={faEyeSlash}
+                className="absolute right-3 top-2/4 translate-y-2/4 cursor-pointer mr-4 mt-[5px] select-none"></FontAwesomeIcon>
+            )}
           </div>
         </form>
       )}
@@ -232,6 +255,8 @@ FormGroup.propTypes = {
   children: PropTypes.string,
   control: PropTypes.string,
   errors: PropTypes.string,
+  isSignUp: PropTypes.bool,
+  onClick: PropTypes.func,
   //   title: PropTypes.string,
   //   changeLink: PropTypes.string,
   //   titleSign: PropTypes.string,
