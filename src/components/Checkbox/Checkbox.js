@@ -10,7 +10,7 @@ function Checkbox({ checked = false, onClick = () => {}, name }) {
         onChange={() => {}}
       />
       <label
-        className={`relative inline-block mr-2 w-5 h-5 border border-strock rounded cursor-pointer  ${
+        className={`relative inline-block mr-2 w-5 h-4 border rounded cursor-pointer  ${
           checked ? "bg-primary border-primary" : "border-strock"
         }`}
         onClick={onClick}>
@@ -18,10 +18,10 @@ function Checkbox({ checked = false, onClick = () => {}, name }) {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 24 24"
+            viewBox="0 0 26 26"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-4 h-4">
+            className="w-5 h-4">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

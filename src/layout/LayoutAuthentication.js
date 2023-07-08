@@ -41,9 +41,6 @@ function LayoutAuthentication({ children, heading = "", title, changeLink }) {
 LayoutAuthentication.propTypes = {
   children: PropTypes.any.isRequired,
   heading: PropTypes.string,
-  //   title: PropTypes.string,
-  //   changeLink: PropTypes.string,
-  //   titleSign: PropTypes.string,
 };
 
 const ComponentWithErrorBoundary = withErrorBoundary(LayoutAuthentication, {

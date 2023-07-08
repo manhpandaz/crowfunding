@@ -6,7 +6,7 @@ function Button({
   icon,
   imageSrc,
   classnames,
-  onSubmit,
+  onClick,
   isLoading = false,
   alt,
   ...rest
@@ -19,7 +19,7 @@ function Button({
   return (
     <button
       type={type}
-      onSubmit={onSubmit}
+      onClick={onClick}
       className={`flex items-center justify-center gap-x-2 min-h-[56px] font-semibold p-3 mb-5 border rounded-lg ${classnames}`}
       {...rest}>
       {icon ? <span>{icon}</span> : ""}
