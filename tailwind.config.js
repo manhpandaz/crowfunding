@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         body: ["Epilogue", "sans-serif;"],
       },
+      boxShadow: {
+        sidebar: "10px 10px 20px 0px rgba(218, 213, 213, 0.15)",
+      },
       colors: {
         primary: "#1DC071",
         secondary: "#6f40FD",

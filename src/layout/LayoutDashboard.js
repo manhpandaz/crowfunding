@@ -5,10 +5,11 @@ import React from "react";
 function LayoutDashboard({ children }) {
   return (
     <div className="p-10 bg-lightBg">
+      <div className="overlay hidden fixed inset-0 bg-black bg-opacity-10"></div>
       <DashboardTopbar />
       <div className="flex ">
         <DashboardSidebar />
-        <div> {children}</div>
+        <div className="flex-1"> {children}</div>
       </div>
     </div>
   );
