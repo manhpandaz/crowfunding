@@ -15,7 +15,7 @@ function CampaignItem({
   userName,
 }) {
   return (
-    <div className="shadow-sidebar mb-5">
+    <div className="shadow-sidebar mb-5 ">
       <Link>
         <div className="h-[200px] rounded-2xl mb-4">
           {" "}
@@ -29,14 +29,14 @@ function CampaignItem({
           />
         </div>
       </Link>
-      <div className="p-4">
+      <div className="p-4 ">
         <Link className="flex justify-start items-center text-sm text-center">
           <IconFolder className="mr-3" />
           <span className="text-center">{folder}</span>
         </Link>
-        <div className="mb-4 text-start">
+        <div className="my-4 text-start">
           <h3 className="text-base text-text1 font-semibold py-4">{title}</h3>
-          <span className="text-xs text-text3">{desc}</span>
+          <span className="text-xs text-text3 h-4">{desc}</span>
         </div>
         <div className="mb-4 flex justify-between">
           <div className="flex flex-col text-center text-sm">
@@ -48,7 +48,7 @@ function CampaignItem({
             <span>total backers</span>
           </div>
         </div>
-        <div className="flex items-center gap-2 mt-5">
+        <div className=" flex items-center gap-2 bottom-0">
           <div className="user w-8 h-8 rounded-3xl">
             <img
               className="w-full h-full object-cover rounded-3xl"

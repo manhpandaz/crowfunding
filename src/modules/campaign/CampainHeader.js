@@ -33,15 +33,15 @@ function CampainHeader({
           <div className="w-[275px] h-[5px] bg-primary "></div>
         </div>
         <div className="mb-4 flex justify-between">
-          <div className="flex flex-col text-center text-sm">
+          <div className="flex flex-col text-start text-sm">
             <span>{`$ ${currentRice}`}</span>
             <span>{`Raised of $${raised}`}</span>
           </div>
-          <div className="flex flex-col text-center text-sm">
+          <div className="flex flex-col text-start text-sm">
             <span>{totalBackers}</span>
             <span>total backers</span>
           </div>
-          <div className="day-left flex flex-col text-center text-sm">
+          <div className="day-left flex flex-col text-start text-sm">
             <span>{dayLeft}</span>
             <span>Days left</span>
           </div>

@@ -1,3 +1,5 @@
+import CampainStart from "modules/campaign/CampainStart.js";
+import CampaignPage from "pages/CampaignPage.js";
 import React, { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -10,6 +12,10 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<DashboardPage></DashboardPage>}></Route>
+        <Route path="/campaign" element={<CampaignPage></CampaignPage>}></Route>
+        <Route
+          path="/campaign/startCampaign"
+          element={<CampainStart></CampainStart>}></Route>
         <Route path="/sign-up" element={<SignUpPage></SignUpPage>}></Route>
         <Route path="/sign-in" element={<SignInPage></SignInPage>}></Route>
       </Routes>

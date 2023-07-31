@@ -7,3 +7,4 @@ export const { default: IconProfile } = require("./IconProfile");
 export const { default: IconLogOut } = require("./IconLogOut");
 export const { default: IconDarkmode } = require("./IconDarkmode");
 export const { default: IconFolder } = require("./IconFolder");
+export const { default: IconPlusCircle } = require("./IconPlusCircle");
